@@ -1,2 +1,1 @@
-# workbook-1
-Year Up: Java Workbook 1
+“## This is a practice repo”
