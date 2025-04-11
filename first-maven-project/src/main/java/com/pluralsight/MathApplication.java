@@ -1,15 +1,17 @@
 package com.pluralsight;
 
+import java.math.BigDecimal;
+
 public class MathApplication {
     public static void main(String[] args) {
 //        Question 1
-        double bobSalary = 50000;
-        double garySalary = 60000;
-        double highestSalary = Math.max(bobSalary, garySalary);
+        BigDecimal bobSalary = new BigDecimal(50000);
+        BigDecimal garySalary = new BigDecimal( 60000);
+        BigDecimal highestSalary = bobSalary.max(garySalary);
 //Question 2
-        double carPrice = 14000.99;
-        double truckPrice = 19999.99;
-        double cheapestVehicle = Math.min(carPrice, truckPrice);
+        BigDecimal carPrice = new BigDecimal(14000.99);
+        BigDecimal truckPrice = new BigDecimal(19999.99);
+        BigDecimal cheapestVehicle = carPrice.min(truckPrice);
 //Question 3
         double radius = 7.25;
         double area = Math.PI * Math.pow(radius, 2);
@@ -42,7 +44,7 @@ public class MathApplication {
         };
 
         for (Object[] answer : answers) {
-            System.out.printf("%-40s %s%n", answer[0], answer[1]);
+            System.out.printf("%s%n%s%n", answer[0], answer[1]);
         }
     }
 }
