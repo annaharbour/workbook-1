@@ -1,8 +1,5 @@
 package com.pluralsight;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
-
 public class VariableDeclarations {
     private static String printType(Object o) {
         return o.getClass().getSimpleName();
@@ -14,17 +11,20 @@ public class VariableDeclarations {
         String vehicleColor = "red";
         boolean hasTowingPackage = true;
         float odometerReading = 999999.9f;
-        //                doubles more precise than floats
-        double price = 25000.00;
+        //   doubles more precise than floats
+        //for financial calculations where you require decimal exactness, you might use BigDecimals, then set
+        // scale/rounding mode
+        double price = 19999.99;
         char qualityRating = 'A';
-//        could also use a string
+        //could also use a long if I wanted a number or an int if I excluded the 1. Choosing string due to potential
+        // leading 0's at the front which would be lost in an int
         String phoneNumber = "15555555555";
-//        9 digits, within scope of int
+        //9 digits, so also within scope of int
         long socialSecurityNumber = 555_55_5555L;
         int zipCode = 28226;
 
-
-        Object[][] dataTypes = {
+        //2D Array to store questions and answers
+        Object[][] qas = {
                 {"a vehicle identification number in the range 1000000 - 9999999", vehicleIdentificationNumber},
                 {"a vehicle make / model(i.e.Ford Explorer)", vehicleMakeModel},
                 {"a vehicle color", vehicleColor},
@@ -39,8 +39,9 @@ public class VariableDeclarations {
 
         System.out.println("Data Types");
         System.out.println("----------------");
-        for (Object[] dataType : dataTypes) {
-            System.out.printf(dataType[0] + " : " + dataType[1] + " : " + printType(dataType[1]) + "%n");
+        for (Object[] qa : qas) {
+            System.out.printf(qa[0] + " : " + qa[1] + " (" + printType(qa[1]) + ")" +
+                    "%n");
         }
     }
 };

@@ -13,6 +13,7 @@ public class MathApplication {
         BigDecimal carPrice = new BigDecimal(14000.99);
         BigDecimal truckPrice = new BigDecimal(19999.99);
         BigDecimal cheapestVehicle = carPrice.min(truckPrice);
+        cheapestVehicle = cheapestVehicle.setScale(2, BigDecimal.ROUND_UNNECESSARY);
 //Question 3
         double radius = 7.25;
         double area = Math.PI * Math.pow(radius, 2);
@@ -35,8 +36,8 @@ public class MathApplication {
 
 
         Object[][] qas = {
-                {"1. The highest salary is...", highestSalary},
-                {"2. The lowest car price is...", cheapestVehicle},
+                {"1. The highest salary is... $", highestSalary},
+                {"2. The lowest car price is... $", cheapestVehicle},
                 {"3. The area of the circle is...", area},
                 {"4. The square root is...", squareRoot},
                 {"5. The distance is...", distance},
