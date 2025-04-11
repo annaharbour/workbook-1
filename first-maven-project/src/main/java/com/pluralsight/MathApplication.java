@@ -3,6 +3,7 @@ package com.pluralsight;
 import java.math.BigDecimal;
 
 public class MathApplication {
+
     public static void main(String[] args) {
 //        Question 1
         BigDecimal bobSalary = new BigDecimal(50000);
@@ -33,7 +34,7 @@ public class MathApplication {
         double randomD = min + (max - min) * Math.random();
 
 
-        Object[][] answers = {
+        Object[][] qas = {
                 {"1. The highest salary is...", highestSalary},
                 {"2. The lowest car price is...", cheapestVehicle},
                 {"3. The area of the circle is...", area},
@@ -43,8 +44,8 @@ public class MathApplication {
                 {"7. The random number is...", randomD}
         };
 
-        for (Object[] answer : answers) {
-            System.out.printf("%s%n%s%n", answer[0], answer[1]);
+        for (Object[] qa : qas) {
+            System.out.printf(qa[0] + " " + qa[1] + "%n");
         }
     }
 }

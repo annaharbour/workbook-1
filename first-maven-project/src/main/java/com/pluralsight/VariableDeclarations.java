@@ -1,8 +1,12 @@
 package com.pluralsight;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 public class VariableDeclarations {
+    private static String printType(Object o) {
+        return o.getClass().getSimpleName();
+    }
 
     public static void main(String[] args) {
         String vehicleIdentificationNumber = "1F6A1234567890123";
@@ -14,9 +18,9 @@ public class VariableDeclarations {
         double price = 25000.00;
         char qualityRating = 'A';
 //        could also use a string
-        long phoneNumber = 15555555555L;
+        String phoneNumber = "15555555555";
 //        9 digits, within scope of int
-        int socialSecurityNumber = 555555555;
+        long socialSecurityNumber = 555_55_5555L;
         int zipCode = 28226;
 
 
@@ -36,8 +40,7 @@ public class VariableDeclarations {
         System.out.println("Data Types");
         System.out.println("----------------");
         for (Object[] dataType : dataTypes) {
-            System.out.printf("%-40s %s%n", dataType[0], dataType[1]);
+            System.out.printf(dataType[0] + " : " + dataType[1] + " : " + printType(dataType[1]) + "%n");
         }
     }
-}
-;
+};
